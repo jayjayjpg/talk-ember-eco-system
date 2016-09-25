@@ -24,8 +24,178 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+                                <section>
+                                        <h1>Growing Through Community</h1>
+                                        <h3>An Intro Into The Ember.js Ecosystem</h3>
+                                        <p>
+                                                <small><a href="http://hakim.se">Jessica Jordan</a> / <a href="http://twitter.com/hakimel">@jjordan_dev</a></small>
+                                        </p>
+                                </section>
+				<section>
+                                  <h2></h2>
+                                  <ul>
+                                    <li>Ember CLI perks: synchronous release cycle, scaffolding, templating /modules, depdency management, runtime config,build tool, special perks. e.g. fingerprinting, help in upgrade,</li>
+                                    <li>Ember Addons - How the ecosystem grows, where to find, numbers how many</li>
+                                    <li>Ember Server Side - Write your SEO-friendly Apps in Fastboot</li>
+                                    <li>Glimmer 2 for less JS load</li>
+                                  </ul>
+				</section>
+				<section>
+                                  <h2>Ember.js is just another JavaScript Framework</h2>
+                                  <p>development of web apps similar to Angular or a React Stack</p>
+                                  <p>open-source community project with the latest major release (v2.0) in summer '15</p>
+                                  <p>an opiniated framework based on "convention over configuration"</p>
+                                  <img src="./img/tomster.png"/>
+				</section>
+				<section>
+                                  <h2>So what's special about Ember?</h2>
+                                  -> many gimmicks that make your life as a developer much more relaxed
+                                </section>
+				<section>
+				1
+                                  <h2>What is Ember-CLI?</h2>
+                                  <a href="https://ember-cli.com/" target="embercli"><img src="./img/embercli.svg" alt="ember cli logo" /></a>
+                                  <p>the Ember.js command line utility for developing your Ember.js projects</p>
+<pre><code>you@terminal:~/$ npm install -g ember-cli
+you@terminal:~/$ npm install -g bower
+// Ready to create a new ember project
+you@terminal:~/$ ember new fancy-app</code></pre>
+                                  <aside class="notes">still work in progress in 2014, but official build tool since
+                                  Ember v1.11.0
+                                  released synchronously with Ember.js + Ember-Data ~ 6 weeks
+                                  release cycle will be around roughly every six weeks to make constant deprecation of
+                                  old features and easy migrations of your projects possible - projects won't break
+                                  until you ignored the deprecation warnings for a dozen of minor releases this way. 
+                                  More about safe upgrading and helpful tools for that later
+                                  If you now want to get started with ember you can get started as follows
+                                  - install ember cli globally
+                                  if you are a node package management purist and are actually not using it already you will also 
+                                  have to install bower globally
+                                  and finally you are ready to create a new ember app with ember new command</aside>
+				</section>
+                                <section>
+                                2
+                                  <h2>Ember CLI and its asset pipeline</h2>
+                                  <ul>
+                                    <li>Raw assets available under one specific url: /assets</li>
+                                    <li>Minification and concatenation of project and third-party CSS and JS</li>
+                                    <li>Preprocessors are only one ember install command away</li>
+
+                                  </ul>
+<pre><code>ember install ember-cli-sass</code></pre>
+That's it! You're now ready to use your .scss files in your app's directory for styles
+                                  <aside class="notes">
+                                    Minification is optional for external code sources.
+                                    preprocessors can be - Sass, CoffeeScript and more
+                                    More on the preprocessors when we cover Addons
+                                  </aside>
+                                </section>
+                                <section>
+                                  <h2>Ember CLI and its asset pipeline</h2>
+                                  <p>Fingerprinting of assets in your production build</p>
+                                  <p>*.js *.css *.png *.jpg *.gif</p>
+                                  assets/yourapp-9c2cbd818d09a4a742406c6cb8219b3b.js
+                                  <aside class="notes">
+                                    done with broccoli-asset-rev
+                                    Ember Cli will add a m5 checksum to all your assets in the new production build - 
+                                    simplifies caching issues when you are updating your app to a new public version
+                                  </aside>
+                                </section>
+                                <section>
+                                  3
+                                  <h2>Project Scaffolding in Ember CLI</h2>
+<pre><code>ember new fancy-app</code></pre>
+<p>fully running app with basic project structure is served on your localhost</p>
+<img src="./img/scaffolding.jpg" alt="Project Structure Ember.js"/>
+<img src="./img/demoapp.jpg" alt="Screenshot of Demo App" />
+                                  <aside class="notes">
+                                    If you are familiar with Ruby on Rails, the project structure of a 
+                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
+                                    are all tucked away in their specific directories adhering to a strict
+                                    naming convention
+                                  </aside>
+                                </section>
+                                <section>
+                                  3
+                                  <h2>Project Scaffolding in Ember CLI</h2>
+                                  <p>Blueprints get you started with ES6 modules</p>
+<pre><code>ember g component shiny-component
+installing component
+  create app/components/shiny-component.js
+  create app/templates/components/shiny-component.hbs
+installing component-test
+  create tests/integration/components/shiny-component-test.js
+</code></pre>
+<img src="./img/component-blueprint.jpg" alt="Project Structure Ember.js"/>
+                                  <aside class="notes">
+                                    If you are familiar with Ruby on Rails, the project structure of a 
+                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
+                                    are all tucked away in their specific directories adhering to a strict
+                                    naming convention
+                                  </aside>
+                                </section>
+                                <section>
+                                4
+                                  <h2>Dependency Management in Ember CLI</h2>
+                                  <p>Bower is used for Ember dependency management</p>
+<pre><code> // in ember-cli-build.js
+app.import('bower_components/d3/d3.js');
+</code></pre>
+<p>Handling different assets for specific environments</p>
+
+                                  <aside class="notes">
+                                    non bower components can always be added via the /vendor directory
+                                    npm dependencies also usable als global variables by an ember addon ember-browserify
+                                    bower and npm, Ember addons (tbc later)
+                                  </aside>
+                                </section>
+                                <section>
+                                5
+                                  <h2>Even more Perks in Ember CLI</h2>
+                                  <p>Full Testing Setup for Unit, Acceptance and Integration Tests</p>
+                                  <p>JS Hint</p>
+                                  <p>Deprecation Warnings</p>
+                                  <p>...and more</p>
+                                </section>
+                                <section>
+                                6
+                                  <h2>Community Growth with <a href="https://www.emberaddons.com/" target="emberaddons">Ember Addons</a></h2>
+                                  <p>nearly 2900 addons for preprocessing, dependency management, JS libraries,
+                                  CSS frameworks and more</p>
+<script src="http://www.charted.co/embed.js" data-charted="3e560b6"></script>
+                                  
+                                </section>
+                                <section>
+                                7
+                                  <h2>Ember goes Server Side made possible by Fastboot</h2>
+                                  What is Fastboot, main characteristics, example app
+                                </section>
+                                <section>
+                                  <h2>Community Efforts Become More Effective With Strong Conventions</h2>
+                                  <p>Ember.js shows how solid conventions can help anyone developing build
+                                  tools, plugins and addons make their efforts easily accessible and reusable</p>
+                                  <aside class="notes">
+                                    Without these conventions the community would have a much harder time
+                                    to explain to reusers of their dependencies how to configure those, makes
+                                    it also easier to avoid clashes between different plugins. Seldom
+                                    people really enjoy the pleasures of writing extensie documentation to
+                                    the fullest, so why not spare them the effort by already existing conventions
+                                  </aside>
+                                </section>
+                                <section>
+                                 8
+                                 <h2>Glimmer 2</h2>
+                                 What is Glimmer, how it reflects effort to not only serve big application devs
+                                </section>
+                                <section>
+                                9
+                                  <h2>Most important inclusive community</h2>
+                                    framework branding, accessibility, women (zoey, whw)
+                                </section>
+                                <section>
+                                10
+                                  <h2>Wow, thanks you're the best!</h2>
+                                </section>
 			</div>
 		</div>
 
