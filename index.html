@@ -39,15 +39,25 @@
                                         
                                 </section>
 				<section>
-                                  <h2>Hi!</h2>
-                                    <p>BioJS Logo and some text about my Ember exp</p>
+                                  <h2>Hi everyone!</h2>
+                                    <div class="row">
+                                      <div class="col-2">
+                                        <img style="float: left; width: 25%;" src="./img/biojs.png" alt="biojs logo"/>
+                                        BioJS <small>Components for Visualizing Biological Data on the Web</small>
+                                      </div>
+                                      <div class="col-2">
+                                        Freelance Projects involving Ember.js
+                                        <img src="./img/projects.jpg" alt="Projects Bundle Image" />
+                                      </div>
+                                    </div>                                   
 				</section>
 				<section>
-                                  <h2>Ember.js is just another JavaScript Framework</h2>
-                                  <p>development of web apps similar to Angular or a React Stack</p>
-                                  <p>open-source community project with the latest major release (v2.0) in August '15</p>
-                                  <p>an opiniated framework based on "convention over configuration"</p>
-                                  <img src="./img/tomster.png"/>
+                                  <h2>Ember.js as just another JS Framework</h2>
+                                  <p>named alongside Angular or the React Stack</p>
+                                  <p>open-source community project</p>
+                                  <p>latest major release <strong>v2.0</strong> in August '15</p>
+                                  <p>focus on "convention over configuration" paradigm</p>
+                                  <img width="20%" src="./img/tomster.png"/>
                                   <aside class="notes">
                                                                       <li>Ember CLI perks: synchronous release cycle, scaffolding, templating /modules, depdency management, runtime config,build tool, special perks. e.g. fingerprinting, help in upgrade,</li>
                                     <li>Ember Addons - How the ecosystem grows, where to find, numbers how many</li>
@@ -57,17 +67,16 @@
 				</section>
 				<section>
                                   <h2>So what's special about Ember?</h2>
-                                  -> many gimmicks that make your life as a developer much more relaxed
+                                  <p class="fragment fade-up">The growing and community-driven ecosystem</p>
                                 </section>
 				<section>
-				1
                                   <h2>What is Ember-CLI?</h2>
                                   <a href="https://ember-cli.com/" target="embercli"><img src="./img/embercli.svg" alt="ember cli logo" /></a>
                                   <p>the Ember.js command line utility for developing your Ember.js projects</p>
-<pre><code>you@terminal:~/$ npm install -g ember-cli
-you@terminal:~/$ npm install -g bower
+<pre><code>npm install -g ember-cli
+npm install -g bower
 // Ready to create a new ember project
-you@terminal:~/$ ember new fancy-app</code></pre>
+ember new fancy-app</code></pre>
                                   <aside class="notes">still work in progress in 2014, but official build tool since
                                   Ember v1.11.0
                                   released synchronously with Ember.js + Ember-Data ~ 6 weeks
@@ -82,7 +91,42 @@ you@terminal:~/$ ember new fancy-app</code></pre>
                                   and finally you are ready to create a new ember app with ember new command</aside>
 				</section>
                                 <section>
-                                2
+                                  3
+                                  <h2>Project Scaffolding in Ember CLI</h2>
+<pre><code>ember new fancy-app</code></pre>
+<p>first app setup with basic project structure is created</p>
+<img src="./img/scaffolding.jpg" alt="Project Structure Ember.js"/>
+                                  <aside class="notes">
+                                    If you are familiar with Ruby on Rails, the project structure of a 
+                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
+                                    are all tucked away in their specific directories adhering to a strict
+                                    naming convention
+                                  </aside>
+                                </section>
+                                <section>
+                                <h2>Live Reload Server in Ember CLI</h2>
+<pre><code>ember serve</code></pre>
+<img src="./img/demoapp.jpg" alt="Screenshot of Demo App" />
+                                </section>
+                                <section>
+                                  <h2>Automatic Blueprint Generation in Ember CLI</h2>
+                                  <p>Blueprints get you started with ES6 modules</p>
+<pre><code>ember g component shiny-component
+installing component
+  create app/components/shiny-component.js
+  create app/templates/components/shiny-component.hbs
+installing component-test
+  create tests/integration/components/shiny-component-test.js
+</code></pre>
+<img src="./img/component-blueprint.jpg" alt="Project Structure Ember.js"/>
+                                  <aside class="notes">
+                                    If you are familiar with Ruby on Rails, the project structure of a 
+                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
+                                    are all tucked away in their specific directories adhering to a strict
+                                    naming convention
+                                  </aside>
+                                </section>
+                                <section>
                                   <h2>Ember CLI and its asset pipeline</h2>
                                   <ul>
                                     <li>Raw assets available under one specific url: /assets</li>
@@ -107,40 +151,6 @@ That's it! You're now ready to use your .scss files in your app's directory for 
                                     done with broccoli-asset-rev
                                     Ember Cli will add a m5 checksum to all your assets in the new production build - 
                                     simplifies caching issues when you are updating your app to a new public version
-                                  </aside>
-                                </section>
-                                <section>
-                                  3
-                                  <h2>Project Scaffolding in Ember CLI</h2>
-<pre><code>ember new fancy-app
-ember serve</code></pre>
-<p>fully running app with basic project structure is served on your localhost</p>
-<img src="./img/scaffolding.jpg" alt="Project Structure Ember.js"/>
-<img src="./img/demoapp.jpg" alt="Screenshot of Demo App" />
-                                  <aside class="notes">
-                                    If you are familiar with Ruby on Rails, the project structure of a 
-                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
-                                    are all tucked away in their specific directories adhering to a strict
-                                    naming convention
-                                  </aside>
-                                </section>
-                                <section>
-                                  3
-                                  <h2>Project Scaffolding in Ember CLI</h2>
-                                  <p>Blueprints get you started with ES6 modules</p>
-<pre><code>ember g component shiny-component
-installing component
-  create app/components/shiny-component.js
-  create app/templates/components/shiny-component.hbs
-installing component-test
-  create tests/integration/components/shiny-component-test.js
-</code></pre>
-<img src="./img/component-blueprint.jpg" alt="Project Structure Ember.js"/>
-                                  <aside class="notes">
-                                    If you are familiar with Ruby on Rails, the project structure of a 
-                                    conventional Ember app will be familiar to you: Routes, Components, Models, Adapters
-                                    are all tucked away in their specific directories adhering to a strict
-                                    naming convention
                                   </aside>
                                 </section>
                                 <section>
