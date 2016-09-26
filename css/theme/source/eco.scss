@@ -36,7 +36,16 @@
     width: 50%;
     margin: 0 auto;
   }
-  
+
+  .col-25 {
+    width: 25%;
+    margin: 0 auto;
+  }
+  section {
+    img {
+      border: none !important;
+    }
+  }
 }
 // some overrides after theme template import
 @for $i from 1 through 4 {
