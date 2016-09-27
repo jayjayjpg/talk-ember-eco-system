@@ -30,6 +30,7 @@
       &:after {
         content: "";
         clear: both;
+        display: table;
       }
   }
   .col-50 {
@@ -41,12 +42,121 @@
     width: 25%;
     margin: 0 auto;
   }
+
+  .col-12 {
+    width: 12.5%;
+    margin: 0 auto;
+  }
   section {
     img {
       border: none !important;
     }
   }
+  .gimmick {
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    text-align: right;
+    font-size: .5em;
+      
+      .g-item {
+        margin-left: 1.2em;
+        position: relative;
+        opacity: 0;
+        display: none;
+        
+        &.current {
+          color: #dd77dd;
+          
+          .material-icons {
+            color: #dd77dd;
+          }
+        }
+        
+        .material-icons {
+          position: absolute;
+          top: 1%;
+          left: -1em;
+ 
+        }
+      }
+   }
 }
+
+.embercli {
+  .reveal {
+    .g-item {
+      &.embercli {
+        color: #268bd2;
+        opacity: 1;
+        display: inline;
+      }
+    }
+  }
+}
+.emberaddons {
+  .g-item {
+    &.emberaddons {
+      color: #268bd2;
+      opacity: 1;
+      display: inline;
+    }
+      &.embercli {
+      opacity: .5;
+      display: inline;
+    }
+  }
+}
+.emberfastboot {
+  .g-item {
+    &.emberfastboot {
+      color: #268bd2;
+      opacity: 1;
+      display: inline;
+    }
+      &.embercli {
+      opacity: .5;
+      display: inline;
+    }
+      &.emberaddons {
+      opacity: .5;
+      display: inline;
+    }
+  }
+}
+.community {
+  .g-item {
+    &.community {
+      color: #268bd2;
+      opacity: 1;
+      display: inline;
+    }
+      &.embercli {
+      opacity: .5;
+      display: inline;
+    }
+      &.emberaddons {
+      opacity: .5;
+      display: inline;
+    }
+      &.emberfastboot {
+      opacity: .5;
+      display: inline;
+    }
+  }
+}
+.allgimmicks {
+  .reveal {
+    .gimmick {
+      .g-item {
+          color: blue;
+          opacity: 1;
+          display: inline;
+        }
+    }
+  }
+}
+
 // some overrides after theme template import
 @for $i from 1 through 4 {
   .reveal .col-#{$i} {

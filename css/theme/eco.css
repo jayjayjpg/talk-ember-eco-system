@@ -293,7 +293,8 @@ body {
   text-align: center; }
   .reveal .row:before, .reveal .row:after {
     content: "";
-    clear: both; }
+    clear: both;
+    display: table; }
 
 .reveal .col-50 {
   width: 50%;
@@ -303,8 +304,81 @@ body {
   width: 25%;
   margin: 0 auto; }
 
+.reveal .col-12 {
+  width: 12.5%;
+  margin: 0 auto; }
+
 .reveal section img {
   border: none !important; }
+
+.reveal .gimmick {
+  position: absolute;
+  top: 1em;
+  right: 2em;
+  text-align: right;
+  font-size: .5em; }
+  .reveal .gimmick .g-item {
+    margin-left: 1.2em;
+    position: relative;
+    opacity: 0;
+    display: none; }
+    .reveal .gimmick .g-item.current {
+      color: #dd77dd; }
+      .reveal .gimmick .g-item.current .material-icons {
+        color: #dd77dd; }
+    .reveal .gimmick .g-item .material-icons {
+      position: absolute;
+      top: 1%;
+      left: -1em; }
+
+.embercli .reveal .g-item.embercli {
+  color: #268bd2;
+  opacity: 1;
+  display: inline; }
+
+.emberaddons .g-item.emberaddons {
+  color: #268bd2;
+  opacity: 1;
+  display: inline; }
+
+.emberaddons .g-item.embercli {
+  opacity: .5;
+  display: inline; }
+
+.emberfastboot .g-item.emberfastboot {
+  color: #268bd2;
+  opacity: 1;
+  display: inline; }
+
+.emberfastboot .g-item.embercli {
+  opacity: .5;
+  display: inline; }
+
+.emberfastboot .g-item.emberaddons {
+  opacity: .5;
+  display: inline; }
+
+.community .g-item.community {
+  color: #268bd2;
+  opacity: 1;
+  display: inline; }
+
+.community .g-item.embercli {
+  opacity: .5;
+  display: inline; }
+
+.community .g-item.emberaddons {
+  opacity: .5;
+  display: inline; }
+
+.community .g-item.emberfastboot {
+  opacity: .5;
+  display: inline; }
+
+.allgimmicks .reveal .gimmick .g-item {
+  color: blue;
+  opacity: 1;
+  display: inline; }
 
 .reveal .col-1 {
   float: left;
